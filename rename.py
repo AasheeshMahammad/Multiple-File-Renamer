@@ -14,7 +14,7 @@ def main():
     os.system("cls")
     while True:
         files=[]
-        path="D:\\change\\code\\link related\\"
+        path="."   # Specify path here
         for file in os.listdir(path):
             files.append(file)
         files.sort()
@@ -48,7 +48,7 @@ def main():
             main_files.append(i)
         if len(files) > 0:
             while True:
-                st=input("Enter What to Replace (Enter to Continue to replace) :")
+                st=input("Enter What to Replace (Enter to Continue to replace):")
                 st.strip()
                 if st=="":
                     break
@@ -60,7 +60,7 @@ def main():
                         rep(st,tr,files)
                     print_files(files)
             print_files(files)
-            st=input("Continue :")
+            st=input("Continue (0/1):")
             try:
                 st=int(st)
             except:
@@ -70,7 +70,7 @@ def main():
                     for i in range(0,len(files)):
                         print(main_files[i],"->",files[i])
                         os.rename(path+"\\"+main_files[i],path+"\\"+files[i])
-            retry=input("Retry :")
+            retry=input("Retry (0/1):")
             try:
                 retry=int(retry)
             except:
